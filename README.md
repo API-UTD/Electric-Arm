@@ -1,4 +1,4 @@
-# Electric-Arm
+# Electronic-Arm
 This team is focused on creating an electric/motorized arm for a below-elbow amputee.
 
 ## Sub-teams
