@@ -1,0 +1,62 @@
+//D.A.M.
+//By API-UTD
+//Affordable Electronic Arm for Below Arm Amputtee focusing on wrist movement, and clasping motion
+
+//Using 3x MG966R Servo Motors and an Elegoo Uno R3
+#include <servo.h>
+//#include <EMG LIBRARY>
+
+//Wrist Rotation Servo
+const int wRotatePin = 1;
+Servo wRotate;
+//Wrist Flexion Servo
+const int wBendPin = 2;
+Servo wBend;
+//Finger Bending
+const int fingersPin = 3;
+Servo fingers;
+
+//EMG PADS
+//Each sensor needs 3 inputs
+//One for Positive
+//One for Negative
+//One for Ground
+
+//signal from sensor1
+int sens1;
+//signal from sensor2
+int sens2;
+//signal from sensor3
+int sens3;
+
+void setup() {
+  //assigning the servo motors to their respective output pins from the Arduino
+  wRotate.attach(wRotatePin);
+  wBend.attach(wBendPin);
+  fingers.attach(fingersPin);
+  // Here's where I would setup the EMG pins, IF I HAD ANY
+}
+
+//Continuously tries to match active muscle activity from the pads to a proportional effect on the prosthetic
+//We might want to try a more "button-like" approach as well.
+void loop() {
+  //sens1 = AnalogRead(sensor1);
+  //maps the input signal as a range (0, 1023) -> (0,180) for the servo
+  //the actual signal for the emg might output different values, and the servo output also needs to be tuned.
+  //sens1 = map(sens1, 0, 1023, 0, 180);
+  //wRotate.write(sens1);
+  
+  //sens2 = AnalogRead(sensor2);
+  //maps the input signal as a range (0, 1023) -> (0,180) for the servo
+  //the actual signal for the emg might output different values, and the servo output also needs to be tuned.
+  //sens2 = map(sens2, 0, 1023, 0, 180);
+  //wRotate.write(sens2);
+  
+  //sens3 = AnalogRead(sensor3);
+  //maps the input signal as a range (0, 1023) -> (0,180) for the servo
+  //the actual signal for the emg might output different values, and the servo output also needs to be tuned.
+  //sens3 = map(sens3, 0, 1023, 0, 180);
+  //wRotate.write(sens3);
+
+  //delay(2) //helps make the signal more consistent
+}
