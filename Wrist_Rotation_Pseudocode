@@ -1,0 +1,27 @@
+// Define constants for wrist movement range
+const int MIN_ANGLE = -180;
+const int MAX_ANGLE = 180; 
+
+// Function to control the prosthetic wrist movement
+void controlWrist(int inputSignal) {
+    // Ensure the input signal is within a valid range (-20 to +20)
+    inputSignal = constrain(inputSignal, -20, 20);
+
+    // Map the input signal to the wrist rotation angle within the specified range
+    int wristAngle = map(inputSignal, -20, 20, MIN_ANGLE, MAX_ANGLE);
+
+    // Output the calculated wrist angle 
+    // Replace "servoPin" with the actual pin
+    // servo.write is used to set the angle of the servo
+    servo.write(wristAngle);
+}
+void loop() {
+    // Get the input signal from the input team (replace this with your actual input reading logic)
+    int inputSignal = readInputSignal();
+
+    // Control the prosthetic wrist based on the input signal
+    controlWrist(inputSignal);
+
+    // Add necessary delays or other logic as needed
+    delay(1000);
+}
